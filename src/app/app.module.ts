@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BasicAttributeDirective } from './basic-attribute-directive/basic-attribute.directive';
+import { BetterAttributeDirectiveDirective } from './better-attribute-directive/better-attribute-directive.directive';
 
 @NgModule({
-  declarations: [AppComponent, BasicAttributeDirective],
+  declarations: [AppComponent, BasicAttributeDirective, BetterAttributeDirectiveDirective],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
