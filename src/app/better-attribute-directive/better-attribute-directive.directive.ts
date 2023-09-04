@@ -1,10 +1,17 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  Renderer2,
+} from '@angular/core';
 
 @Directive({
   selector: '[appBetterAttributeDirective]',
 })
 export class BetterAttributeDirectiveDirective {
   constructor(private UIelement: ElementRef, private renderer: Renderer2) {}
+  @HostBinding('style.fontSize') fontSize = '14px';
 
   //Renderer is a better way of accessing the DOM
   ngOnInit() {
@@ -17,18 +24,20 @@ export class BetterAttributeDirectiveDirective {
   }
 
   @HostListener('mouseenter') onMouseEnter(eventData: Event) {
-    this.renderer.setStyle(
-      this.UIelement.nativeElement,
-      'background-color',
-      'red'
-    );
+    // this.renderer.setStyle(
+    //   this.UIelement.nativeElement,
+    //   'background-color',
+    //   'red'
+    // );
+    this.fontSize = '28px';
   }
 
   @HostListener('mouseleave') onMouseLeave(eventData: Event) {
-    this.renderer.setStyle(
-      this.UIelement.nativeElement,
-      'background-color',
-      'transparent'
-    );
+    // this.renderer.setStyle(
+    //   this.UIelement.nativeElement,
+    //   'background-color',
+    //   'transparent'
+    // );
+    this.fontSize = '14px';
   }
 }
