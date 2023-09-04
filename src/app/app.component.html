@@ -16,12 +16,26 @@
       </button>
       <br /><br />
       <ul class="list-group" *ngIf="onlyOdd">
-        <li class="list-group-item" *ngFor="let number of oddNumbers">
+        <li
+          class="list-group-item"
+          *ngFor="let number of oddNumbers"
+          [ngClass]="{ odd: number % 2 != 0 }"
+          [ngStyle]="{
+            backgroundColor: number % 2 != 0 ? 'blue' : 'transparent'
+          }"
+        >
           {{ number }}
         </li>
       </ul>
       <ul class="list-group" *ngIf="onlyEven">
-        <li class="list-group-item" *ngFor="let number of evenNumbers">
+        <li
+          class="list-group-item"
+          *ngFor="let number of evenNumbers"
+          [ngClass]="{ even: number % 2 === 0 }"
+          [ngStyle]="{
+            backgroundColor: number % 2 === 0 ? 'yellow' : 'transparent'
+          }"
+        >
           {{ number }}
         </li>
       </ul>
