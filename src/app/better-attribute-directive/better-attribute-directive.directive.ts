@@ -8,12 +8,12 @@ export class BetterAttributeDirectiveDirective {
 
   //Renderer is a better way of accessing the DOM
   ngOnInit() {
-    this.renderer.setStyle(
-      this.UIelement.nativeElement,
-      'background-color',
-      'black'
-    );
-    this.renderer.setStyle(this.UIelement.nativeElement, 'color', 'white');
+    // this.renderer.setStyle(
+    //   this.UIelement.nativeElement,
+    //   'background-color',
+    //   'black'
+    // );
+    // this.renderer.setStyle(this.UIelement.nativeElement, 'color', 'white');
   }
 
   @HostListener('mouseenter') onMouseEnter(eventData: Event) {
@@ -30,6 +30,5 @@ export class BetterAttributeDirectiveDirective {
       'background-color',
       'transparent'
     );
-    this.renderer.setStyle(this.UIelement.nativeElement, 'color', 'black');
   }
 }
