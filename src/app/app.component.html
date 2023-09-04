@@ -48,6 +48,12 @@
       <p appBetterAttributeDirective userInputFontSize="48px">
         Style getting applied by custom attribute directive
       </p>
+      <div [ngSwitch]="egValue">
+        <p *ngSwitchCase="100">The example value is now 100</p>
+        <p *ngSwitchCase="250">The example value is now 250</p>
+        <p *ngSwitchCase="500">The example value is now 500</p>
+        <p *ngSwitchDefault>The example value is now default</p>
+      </div>
     </div>
   </div>
 </div>
