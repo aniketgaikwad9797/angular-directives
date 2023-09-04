@@ -3,6 +3,7 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
+  Input,
   Renderer2,
 } from '@angular/core';
 
@@ -10,11 +11,13 @@ import {
   selector: '[appBetterAttributeDirective]',
 })
 export class BetterAttributeDirectiveDirective {
+  @Input() userInputFontSize: string;
   constructor(private UIelement: ElementRef, private renderer: Renderer2) {}
-  @HostBinding('style.fontSize') fontSize = '14px';
+  @HostBinding('style.fontSize') fontSize 
 
   //Renderer is a better way of accessing the DOM
   ngOnInit() {
+    this.fontSize = '24px'
     // this.renderer.setStyle(
     //   this.UIelement.nativeElement,
     //   'background-color',
@@ -29,7 +32,7 @@ export class BetterAttributeDirectiveDirective {
     //   'background-color',
     //   'red'
     // );
-    this.fontSize = '28px';
+    this.fontSize = this.userInputFontSize;
   }
 
   @HostListener('mouseleave') onMouseLeave(eventData: Event) {
